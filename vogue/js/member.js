@@ -458,10 +458,46 @@ $('#email1,#email2')
                 데이터 입력하기 ]
 
                 AJAX = Asyncronous Javascript and XML
-            
-            
+
+                - 비동기통신이란? 쉽게 말해서 페이지가
+                새로고쳐지지 않고 그대로 있으면서 일부분만
+                서버통신을 하는 것을 말한다!
+                - 제이쿼리는 POST방식으로 ajax를 처리하는
+                메서드를 제공한다!
+
+                [ POST방식 Ajax 메서드 ]
+                $.post(URL,data,callback)
+                $.post(전송할페이지,전송할데이터,전송후콜백함수)
             
             */
+
+            $.post(
+                // 1.전송할페이지
+                "process/ins.php",
+                // 2. 전송할데이터 : {} 객체로 전송
+                {
+                    // 1.아이디
+                    "mid":$("#mid").val(),
+                    // 2.비번
+                    "mpw":$("#mpw").val(),
+                    // 3.이름
+                    "mnm":$("#mnm").val(),
+                    // 4.성별 : 라디오태그에 value속성필수!
+                    "gen":$(":radio[name=gen]:checked").val(),
+                    // 5-1.이메일 앞주소
+                    "email1":$("#email1").val(),
+                    // 5-2.이메일 뒷주소
+                    "seleml":$("#seleml").val(),
+                    // 5-3.직접입력 이메일 뒷주소
+                    "email2":$("#email2").val()
+                },
+                // 3. 전송후콜백함수
+                
+
+                ); ///////////////// ajax post() /////////
+
+
+
 
             // alert('회원가입을 축하드립니다! 짝짝짝!');
             // 원래는 POST방식으로 DB에 회원가입정보를
