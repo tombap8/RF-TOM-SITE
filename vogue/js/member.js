@@ -220,15 +220,19 @@ form.logF input[type=password]`)
                             $('#mid').siblings('.msg')
                             .text('이미 사용중인 아이디입니다!')
                             .removeClass('on');
-
+                            //[ 불통과시 pass값 변경추가 ]
+                            pass = false;
+                            console.log('중복ID:',pass);
                         } /// else : 아이디중복 ////
                     },
-                    실패처리
-                })
-
-
-
-
+                    // 7.실패처리(error)
+                    // xhr - XMLHttpRequest객체
+                    // status - 실패상태코드
+                    // error - 에러결과값
+                    error:function(xhr,status,error){
+                        alert('연결처리실패:'+error);
+                    } ////// error //////
+                }); //////////// ajax 메서드 ///////////
 
             // 1. DB에 조회하여 같은 아이디가 있다면
             // '이미 사용중인 아이디입니다' 와 같은 메시지출력
