@@ -82,3 +82,4 @@ $('.sbtn').click(()=>$('.mos').slideToggle(300));
 // toggle() -> show() / hide() 전환
 // slideToggle() -> slideDown() / slideUp() 전환
 // fadeToggle() -> fadeIn() / fadeOut() 전환
+
